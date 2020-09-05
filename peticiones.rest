@@ -1,0 +1,38 @@
+GET http://localhost:3000/api/empleados
+
+###
+POST http://localhost:3000/api/empleados
+Content-Type: application/json
+
+{
+    "nombre": "Prueba",
+    "dni": "22334455",
+    "sexo": "F",
+    "fecha_nac": "1982-04-04",
+    "salario": 3000,
+    "cargo:": "Director General",
+    "jefe_id": 3
+}
+
+###
+PUT http://localhost:3000/api/empleados
+Content-Type: application/json
+
+{
+    "id": 12,
+    "nombre": "Prueba2",
+    "dni": "22334455",
+    "sexo": "M",
+    "fecha_nac": "1982-04-04",
+    "salario": 1000,
+    "cargo:": "contable",
+    "jefe_id": 3
+}
+
+###
+DELETE http://localhost:3000/api/empleados
+Content-Type: application/json
+
+{
+    "id": 12
+}
