@@ -1,3 +1,5 @@
+# PETICIONES EMPLEADOS
+
 GET http://localhost:3000/api/empleados
 
 ###
@@ -19,7 +21,7 @@ PUT http://localhost:3000/api/empleados
 Content-Type: application/json
 
 {
-    "id": 12,
+    "id": 14,
     "nombre": "Prueba2",
     "dni": "22334455",
     "sexo": "M",
@@ -34,5 +36,37 @@ DELETE http://localhost:3000/api/empleados
 Content-Type: application/json
 
 {
-    "id": 12
+    "id": 14
+}
+
+# PETICIONES DEPARTAMENTOS
+
+###
+GET http://localhost:3000/api/departamentos
+
+###
+POST http://localhost:3000/api/departamentos
+Content-Type: application/json
+
+{
+    "nombre": "Prueba",
+    "ciudad": "Madrid"
+}
+
+###
+PUT http://localhost:3000/api/departamentos
+Content-Type: application/json
+
+{
+    "id": 6,
+    "nombre": "Prueba2",
+    "ciudad": "Madrid"
+}
+
+###
+DELETE http://localhost:3000/api/departamentos
+Content-Type: application/json
+
+{
+    "id": 6
 }

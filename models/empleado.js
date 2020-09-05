@@ -1,5 +1,4 @@
-const dbConfig = require("../dbConfig");
-
+// Método para sacar todos los empleados
 const getAll = () => {
     return new Promise((resolve, reject) => {
         db.query('SELECT * FROM empleados', (err, rows) => {
@@ -11,6 +10,7 @@ const getAll = () => {
     });
 }
 
+// Método para sacar los empleados según su ID
 const getById = (pEmpleadoId) => {
     return new Promise((resolve, reject) => {
         db.query('SELECT * FROM empleados WHERE id = ?', [pEmpleadoId], (err, rows) => {
@@ -21,7 +21,7 @@ const getById = (pEmpleadoId) => {
     });
 }
 
-
+// Método para crear un nuevo empleado
 const create = ({ nombre, dni, sexo, fecha_nac, fecha_inc, salario, cargo, jefe_id }) => {
     return new Promise((resolve, reject) => {
         db.query('INSERT INTO empleados (nombre, dni, sexo, fecha_nac, fecha_inc, salario, cargo, jefe_id) VALUES (?,?,?,?,?,?,?,?)', [nombre, dni, sexo, fecha_nac, fecha_inc, salario, cargo, jefe_id], (err, result) => {
@@ -33,6 +33,7 @@ const create = ({ nombre, dni, sexo, fecha_nac, fecha_inc, salario, cargo, jefe_
     });
 }
 
+// Método para editar un empleado
 const update = ({ nombre, dni, sexo, fecha_nac, fecha_inc, salario, cargo, jefe_id, id }) => {
     return new Promise((resolve, reject) => {
         db.query('UPDATE empleados SET nombre = ?, dni = ?, sexo = ?, fecha_nac = ?, fecha_inc = ?, salario = ?, cargo= ?, jefe_id = ? WHERE id = ?', [nombre, dni, sexo, fecha_nac, fecha_inc, salario, cargo, jefe_id, id], (err, result) => {
@@ -44,6 +45,7 @@ const update = ({ nombre, dni, sexo, fecha_nac, fecha_inc, salario, cargo, jefe_
     });
 }
 
+// Método para eliminar un empleado
 const remove = (pEmpleadoId) => {
     return new Promise((resolve, reject) => {
         db.query('DELETE FROM empleados WHERE id = ?', [pEmpleadoId], (err, result) => {
